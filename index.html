@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,400;0,700;1,100&display=swap"
+      rel="stylesheet" />
+    <title>CRUDS</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="before"></div>
+      <div class="product-card">
+        <table>
+          <tr>
+            <th>Title</th>
+            <th class="card-title"></th>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <th class="card-price"></th>
+          </tr>
+          <tr>
+            <th>Taxes</th>
+            <th class="card-taxes"></th>
+          </tr>
+          <tr>
+            <th>ADS</th>
+            <th class="card-ads"></th>
+          </tr>
+          <tr>
+            <th>Discount</th>
+            <th class="card-discount"></th>
+          </tr>
+          <tr>
+            <th>Unit-Price</th>
+            <th class="card-unit-price"></th>
+          </tr>
+          <tr>
+            <th>Quantity</th>
+            <th class="card-quantity"></th>
+          </tr>
+          <tr>
+            <th>Total-Price</th>
+            <th class="card-total-price"></th>
+          </tr>
+          <tr>
+            <th>Category</th>
+            <th class="card-category"></th>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <th class="card-description"></th>
+          </tr>
+        </table>
+        <div class="actions">
+          <i class="fa-solid fa-arrow-left back"></i>
+          <i class="fa-solid fa-pen-to-square edit"></i>
+          <i class="fa-solid fa-trash"></i>
+        </div>
+        <div class="after">
+          <input type="text" />
+          <div class="checkbox">
+            <input id="all" type="checkbox" />
+            <label for="all">All</label>
+          </div>
+          <div class="dlt">Delete</div>
+        </div>
+        <div class="after2" style="display: none"></div>
+      </div>
+      <header>
+        <h1>CRUDS <input type="color" id="color" /></h1>
+        <h3>PRODUCT MANAGEMENT SYSTEM</h3>
+      </header>
+      <div class="form">
+        <input type="text" class="name" placeholder="Product Name" />
+        <div class="pricing">
+          <input type="number" class="price" placeholder="Price" />
+          <input type="number" class="taxes" placeholder="Taxes" />
+          <input type="number" class="ads" placeholder="ADS" />
+          <input type="number" class="discount" placeholder="Discount" />
+          <div class="unit-price">Unit-Price:<span>0</span></div>
+        </div>
+        <div class="total-pricing">
+          <input type="number" class="quantity" placeholder="Quantity" />
+          <div class="total-price">Total-Price: <span>0</span></div>
+        </div>
+        <input type="text" class="category" placeholder="Category" />
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="5"
+          placeholder="Description"></textarea>
+        <div class="form-btn">
+          <div class="create-btn">Create</div>
+          <div class="cancel-btn">Cancel</div>
+        </div>
+        <div class="delete-all">Delete All ( <span></span> )</div>
+      </div>
+      <div class="search-section">
+        <input type="text" placeholder="Search By Name" />
+        <select name="category" id="category" placeholder="f"></select>
+      </div>
+      <div class="product-list">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>TITILE</th>
+              <th>PRICE</th>
+              <th>CATEGORY</th>
+              <th>VIEW MORE</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="scroll-up"><i class="fa-solid fa-arrow-up fa-bounce"></i></div>
+  </body>
+  <script src="main.js"></script>
+</html>
