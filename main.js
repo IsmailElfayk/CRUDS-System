@@ -57,32 +57,38 @@ if (localStorage.data === undefined) {
   localStorage.setItem("data", JSON.stringify([]));
 }
 createBtn.addEventListener("click", () => {
-  let data = JSON.parse(localStorage.data);
-  let objPro = {
-    title: titleInput.value,
-    price: priceInput.value,
-    taxes: taxesInput.value,
-    ads: adsInput.value,
-    discount: discountInput.value,
-    "unit-price": document.querySelector(".form .pricing .unit-price span")
-      .textContent,
-    quantity: quantityInput.value,
-    "total-price": document.querySelector(
-      ".form .total-pricing .total-price span"
-    ).textContent,
-    category: categoryInput.value,
-    description: descriptionInput.value,
-  };
-  if (createBtn.textContent === "Create") {
-    data.push(objPro);
-  } else {
-    data[temp] = objPro;
-    createBtn.textContent = "Create";
-    document.querySelector(".cancel-btn").style.display = "none";
+  if (
+    titleInput.value != "" &&
+    priceInput.value != "" &&
+    categoryInput.value != ""
+  ) {
+    let data = JSON.parse(localStorage.data);
+    let objPro = {
+      title: titleInput.value,
+      price: priceInput.value,
+      taxes: taxesInput.value,
+      ads: adsInput.value,
+      discount: discountInput.value,
+      "unit-price": document.querySelector(".form .pricing .unit-price span")
+        .textContent,
+      quantity: quantityInput.value,
+      "total-price": document.querySelector(
+        ".form .total-pricing .total-price span"
+      ).textContent,
+      category: categoryInput.value,
+      description: descriptionInput.value,
+    };
+    if (createBtn.textContent === "Create") {
+      data.push(objPro);
+    } else {
+      data[temp] = objPro;
+      createBtn.textContent = "Create";
+      document.querySelector(".cancel-btn").style.display = "none";
+    }
+    localStorage.data = JSON.stringify(data);
+    resetForm();
+    setData();
   }
-  localStorage.data = JSON.stringify(data);
-  resetForm();
-  setData();
 });
 // ==========================================
 // ============set data list ================
@@ -336,17 +342,15 @@ window.addEventListener("scroll", () => {
 //++++++++++++++++++++++++++++++++
 //=========color==================
 //++++++++++++++++++++++++++++++++
+if (localStorage.color == undefined) {
+  localStorage.setItem("color", "#000");
+}
 let colorInput = document.querySelector("#color");
 colorInput.addEventListener("input", () => {
   localStorage.setItem("color", colorInput.value);
   setColor();
 });
 function setColor() {
-  if (localStorage.color === undefined) {
-    let color = "#FFF";
-  } else {
-    let color = localStorage.color;
-  }
   document.body.style.setProperty("--btn-color", localStorage.color);
 }
 setColor();
